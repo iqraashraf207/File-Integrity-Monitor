@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-*.pyo
-.venv/
-venv/
-baseline.json
-fim.log
-report.json
-.DS_Store
