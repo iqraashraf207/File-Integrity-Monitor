@@ -1,12 +1,12 @@
 # File Integrity Monitor
 
-A lightweight, CLI-based file integrity monitoring tool that detects unauthorized changes to a directory using **SHA-256 cryptographic hashing** — the same principle used by enterprise security tools like Tripwire and OSSEC.
+A lightweight, CLI-based file integrity monitoring tool that detects unauthorized changes to a directory using **SHA-256 cryptographic hashing**, the same principle used by enterprise security tools like Tripwire and OSSEC.
 
 ---
 
 ## What it does
 
-FIM takes a cryptographic snapshot (baseline) of a directory. On every subsequent scan — one-time or continuous — it recomputes hashes and compares them against the baseline to detect:
+FIM takes a cryptographic snapshot (baseline) of a directory. On every subsequent scan (one-time or continuous) it recomputes hashes and compares them against the baseline to detect:
 
 | Event | Description |
 |---|---|
