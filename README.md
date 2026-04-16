@@ -122,13 +122,3 @@ file-integrity-monitor/
 │   └── test_fim.py     # Pytest test suite
 └── README.md
 ```
-
----
-
-## Limitations & future work
-
-- Currently file-system only — no network share support
-- No email/Slack alerting (planned)
-- Baseline is not signed — a sophisticated attacker with write access could tamper with it
-- Would benefit from a daemon mode with `systemd` integration on Linux
-
