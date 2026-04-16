@@ -1,6 +1,6 @@
 # File Integrity Monitor
 
-A lightweight, CLI-based file integrity monitoring tool that detects unauthorized changes to a directory using **SHA-256 cryptographic hashing**, the same principle used by enterprise security tools like Tripwire and OSSEC.
+A lightweight, CLI-based file integrity monitoring tool that detects unauthorized changes to a directory using **SHA-256 cryptographic hashing**.
 
 ---
 
