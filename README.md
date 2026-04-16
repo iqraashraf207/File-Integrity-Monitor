@@ -20,7 +20,7 @@ All events are logged to `fim.log` and saved as structured JSON reports.
 
 ## Why SHA-256?
 
-A file's name and size can stay the same while its contents are silently altered. SHA-256 makes this impossible to hide — even a single changed byte produces a completely different 256-bit hash. This is why integrity checking is a core technique in:
+A file's name and size can stay the same while its contents are silently altered. SHA-256 makes this impossible to hide, even a single changed byte produces a completely different 256-bit hash. This is why integrity checking is a core technique in:
 
 - Host-based Intrusion Detection Systems (HIDS)
 - Ransomware detection pipelines
@@ -132,16 +132,3 @@ file-integrity-monitor/
 - Baseline is not signed — a sophisticated attacker with write access could tamper with it
 - Would benefit from a daemon mode with `systemd` integration on Linux
 
----
-
-## References
-
-- [NIST SP 800-92 — Guide to Computer Security Log Management](https://csrc.nist.gov/publications/detail/sp/800-92/final)
-- [OSSEC HIDS Documentation](https://www.ossec.net/docs/)
-- [Python hashlib docs](https://docs.python.org/3/library/hashlib.html)
-
----
-
-## License
-
-MIT
