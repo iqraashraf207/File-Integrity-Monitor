@@ -14,9 +14,6 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
-
-# ── Logging setup ─────────────────────────────────────────────────────────────
-
 def setup_logger(log_path: str = "fim.log") -> logging.Logger:
     logger = logging.getLogger("FIM")
     logger.setLevel(logging.INFO)
@@ -39,9 +36,6 @@ def setup_logger(log_path: str = "fim.log") -> logging.Logger:
 
 logger = setup_logger()
 
-
-# ── Hashing ────────────────────────────────────────────────────────────────────
-
 def compute_sha256(filepath: str) -> str | None:
     """
     Compute SHA-256 hash of a file.
@@ -56,9 +50,6 @@ def compute_sha256(filepath: str) -> str | None:
         return sha256.hexdigest()
     except (PermissionError, FileNotFoundError, OSError):
         return None
-
-
-# ── Baseline ────────────────────────────────────────────────────────────────────
 
 def build_baseline(directory: str) -> dict:
     """
@@ -91,9 +82,6 @@ def load_baseline(input_path: str = "baseline.json") -> dict:
     logger.info(f"Baseline loaded ← {input_path} ({len(baseline)} files)")
     return baseline
 
-
-# ── Integrity check ─────────────────────────────────────────────────────────────
-
 def check_integrity(directory: str, baseline: dict) -> dict:
     """
     Compare current directory state against a stored baseline.
@@ -116,9 +104,6 @@ def check_integrity(directory: str, baseline: dict) -> dict:
     ]
 
     return {"added": added, "deleted": deleted, "modified": modified}
-
-
-# ── Reporting ────────────────────────────────────────────────────────────────────
 
 def print_report(report: dict) -> bool:
     """
@@ -151,9 +136,6 @@ def save_report(report: dict, output_path: str = "report.json") -> None:
         json.dump(report, f, indent=2)
     logger.info(f"Report saved → {output_path}")
 
-
-# ── Monitor loop ─────────────────────────────────────────────────────────────────
-
 def monitor(directory: str, baseline: dict, interval: int = 10) -> None:
     """
     Continuously monitor the directory at a fixed interval (seconds).
@@ -174,9 +156,6 @@ def monitor(directory: str, baseline: dict, interval: int = 10) -> None:
 
     except KeyboardInterrupt:
         logger.info("Monitor stopped by user.")
-
-
-# ── CLI ──────────────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
